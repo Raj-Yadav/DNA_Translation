@@ -1,9 +1,12 @@
-
+""" Use read_seq() function to read DNA file as well as protein file
+    Use Translate() function to translate DNA file into protein.
+ """
 
 
 inputfile = "dna.txt"
 
 def read_seq(inputfile):
+    """This function will be used to read DNA sequence and return DNA sequence"""
     with open(inputfile , "r") as f:
         seq = f.read()
     seq = seq.replace("\n", "")
@@ -42,6 +45,11 @@ def translate(seq):
     
     return protein
     
+def match(protein, dna):
+    protein = read_seq("protein.txt")
+    dna = read_seq("dna.txt")
+    dna = translate(dna[20:935])
+    return protein == dna
 
 
 
